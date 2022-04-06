@@ -7,4 +7,6 @@
     <string name="cvv">CVV</string>
     <string name="cvv_hint">000</string>
     <string name="comprar">Comprar</string>
+    <string name="autor">Por: %s</string>
+    <string name="editora">Editora: %s</string>
 </resources>

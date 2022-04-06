@@ -8,8 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.estudos.hackdayimed.DetailActivity
 import com.estudos.hackdayimed.R
+import com.estudos.hackdayimed.model.Book
 
-class CustomAdapter(private val dataSet: List<String>) :
+class CustomAdapter(private val dataSet: List<Book>) :
     RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
     class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
@@ -24,14 +25,14 @@ class CustomAdapter(private val dataSet: List<String>) :
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        viewHolder.textView.text = dataSet[position]
+        viewHolder.textView.text = dataSet[position].titulo
         viewHolder.view.setOnClickListener {
-            viewHolder.view.context.startActivity(
-                Intent(
-                    viewHolder.view.context,
-                    DetailActivity::class.java
-                )
+            val intent = Intent(
+                viewHolder.view.context,
+                DetailActivity::class.java
             )
+            intent.putExtra(DetailActivity.BOOK_KEY, dataSet[position])
+            viewHolder.view.context.startActivity(intent)
         }
     }
 
