@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.estudos.hackdayimed.DetailActivity
 import com.estudos.hackdayimed.R
 
-class CustomAdapter(private val dataSet: Array<String>) :
+class CustomAdapter(private val dataSet: List<String>) :
     RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
     class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
