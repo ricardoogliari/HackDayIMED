@@ -1,16 +1,16 @@
 package com.estudos.hackdayimed.adapter
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.estudos.hackdayimed.DetailActivity
 import com.estudos.hackdayimed.R
 import com.estudos.hackdayimed.model.Book
 
-class CustomAdapter(private val dataSet: List<Book>) :
+class CustomAdapter(
+    private val dataSet: List<Book>,
+    private val callback: (book: Book) -> Unit) :
     RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
     class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
@@ -27,12 +27,7 @@ class CustomAdapter(private val dataSet: List<Book>) :
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         viewHolder.textView.text = dataSet[position].titulo
         viewHolder.view.setOnClickListener {
-            val intent = Intent(
-                viewHolder.view.context,
-                DetailActivity::class.java
-            )
-            intent.putExtra(DetailActivity.BOOK_KEY, dataSet[position])
-            viewHolder.view.context.startActivity(intent)
+            callback.invoke(dataSet[position])
         }
     }
 

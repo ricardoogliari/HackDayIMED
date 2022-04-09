@@ -12,12 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HackDayIMED">
         <activity
-            android:name=".DetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PayActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

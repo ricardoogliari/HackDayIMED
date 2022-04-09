@@ -6,6 +6,8 @@
         <entry key="app/src/main/res/layout/activity_detail.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.23177083333333334" />
         <entry key="app/src/main/res/layout/activity_pay.xml" value="0.159375" />
+        <entry key="app/src/main/res/layout/fragment_books.xml" value="0.1765625" />
+        <entry key="app/src/main/res/layout/fragment_pay.xml" value="0.1765625" />
         <entry key="app/src/main/res/layout/item_simple.xml" value="0.1125" />
       </map>
     </option>
